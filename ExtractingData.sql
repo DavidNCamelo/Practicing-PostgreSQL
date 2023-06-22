@@ -45,11 +45,11 @@ SELECT unesco.name, year, category.name, state.name, region.name, iso.name
 INSERT INTO category (name) SELECT DISTINCT category FROM unesco_raw;
 	-- Result
 	SELECT * FROM category;
- id |   name   
-----+----------
-  1 | Mixed
-  2 | Natural
-  3 | Cultural
+-- id |   name   
+------+----------
+--  1 | Mixed
+--  2 | Natural
+--  3 | Cultural
 
 --Action
 CREATE TABLE iso (
@@ -61,44 +61,44 @@ CREATE TABLE iso (
 INSERT INTO iso (name) SELECT DISTINCT iso FROM unesco_raw;
 --Result
 	SELECT * FROM iso;
-id  | name 
------+------
-   1 | sm
-   2 | fj
-   3 | bd
-   4 | np
-   5 | vu
-   6 | fr
-   7 | bh
-   8 | sk
-   9 | pa
-  10 | 
-  11 | ke
-  12 | me
-  13 | bz
-  14 | nz
-  15 | bg
-  16 | ru
-  17 | mg
-  18 | ni
-  19 | pe
-  20 | sg
-  21 | hr
-  22 | cn
-  23 | al
-  24 | sd
-  25 | cr
-  26 | mu
-  27 | ee
-  28 | cv
-  29 | ec
-  30 | jm
-  31 | vn
-  32 | sa
-  33 | mm
-  34 | kh
-  35 | mw
-  36 | hn
+--id  | name 
+-------+------
+--   1 | sm
+--   2 | fj
+--   3 | bd
+--   4 | np
+--   5 | vu
+--   6 | fr
+--   7 | bh
+--   8 | sk
+--   9 | pa
+--  10 | 
+--  11 | ke
+--  12 | me
+--  13 | bz
+--  14 | nz
+--  15 | bg
+--  16 | ru
+--  17 | mg
+--  18 | ni
+--  19 | pe
+--  20 | sg
+--  21 | hr
+--  22 | cn
+--  23 | al
+--  24 | sd
+--  25 | cr
+--  26 | mu
+--  27 | ee
+--  28 | cv
+--  29 | ec
+--  30 | jm
+--  31 | vn
+--  32 | sa
+--  33 | mm
+--  34 | kh
+--  35 | mw
+--  36 | hn
 
 --Action
 CREATE TABLE state (
@@ -112,13 +112,13 @@ INSERT INTO state (name) SELECT DISTINCT state FROM unesco_raw;
 --Result
 INSERT 0 163
 SELECT * FROM state LIMIT 5;
- id |                name                 
-----+-------------------------------------
-  1 | Indonesia
-  2 | Bangladesh
-  3 | Jerusalem (Site proposed by Jordan)
-  4 | Iran (Islamic Republic of)
-  5 | Kiribat
+-- id |                name                 
+------+-------------------------------------
+--  1 | Indonesia
+--  2 | Bangladesh
+--  3 | Jerusalem (Site proposed by Jordan)
+--  4 | Iran (Islamic Republic of)
+--  5 | Kiribat
 
 --Action
 CREATE TABLE region (
@@ -132,13 +132,13 @@ INSERT INTO region (name) SELECT DISTINCT region FROM unesco_raw;
 --Result
 INSERT 0 5
 SELECT * FROM region;
- id |              name               
-----+---------------------------------
-  1 | Asia and the Pacific
-  2 | Arab States
-  3 | Africa
-  4 | Latin America and the Caribbean
-  5 | Europe and North America
+-- id |              name               
+------+---------------------------------
+--  1 | Asia and the Pacific
+--  2 | Arab States
+--  3 | Africa
+--  4 | Latin America and the Caribbean
+--  5 | Europe and North America
 
 --Action
 UPDATE unesco_raw SET category_id = (SELECT category.id FROM category WHERE category.name = unesco_raw.category);
@@ -166,11 +166,11 @@ SELECT unesco.name, unesco.year, category.name, state.name, region.name, iso.nam
   LIMIT 3;
 
 --Result
-                                  name                                   | year |   name   |         name         |           name           | name 
--------------------------------------------------------------------------+------+----------+----------------------+--------------------------+------
- Madriu-Perafita-Claror Valley                                           | 2004 | Cultural | Andorra              | Europe and North America | ad
- Cultural Sites of Al Ain (Hafit, Hili, Bidaa Bint Saud and Oases Areas) | 2011 | Cultural | United Arab Emirates | Arab States              | ae
- Cultural Landscape and Archaeological Remains of the Bamiyan Valley     | 2003 | Cultural | Afghanistan          | Asia and the Pacific     | af
+--                                  name                                   | year |   name   |         name         |           name           | name 
+---------------------------------------------------------------------------+------+----------+----------------------+--------------------------+------
+-- Madriu-Perafita-Claror Valley                                           | 2004 | Cultural | Andorra              | Europe and North America | ad
+-- Cultural Sites of Al Ain (Hafit, Hili, Bidaa Bint Saud and Oases Areas) | 2011 | Cultural | United Arab Emirates | Arab States              | ae
+-- Cultural Landscape and Archaeological Remains of the Bamiyan Valley     | 2003 | Cultural | Afghanistan          | Asia and the Pacific     | af
 
 
 
